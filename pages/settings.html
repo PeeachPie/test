@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="icon" href="logo.png" type="image/png"> -->
+  <link href="../styles/settings/settings.css" rel="stylesheet" type="text/css" />
+  <title>Устный счет</title>
+</head>
+
+<body>
+  <div class="container">
+    
+    <div class="operators">
+      <div class="text">Арифметические действия</div>
+      <div class="choose">
+        <div class="selected" id="plus">+</div>
+        <div class="unselected" id="minus">-</div>
+        <div class="unselected" id="multiply">×</div>
+        <div class="unselected" id="division">÷</div>
+      </div>
+    </div>
+    
+    <div class="numbers">
+      <div class="text">Делители и множители</div>
+      <div class="choose">
+        <div class="selected" id="num1">1</div>
+        <div class="unselected" id="num2">2</div>
+        <div class="unselected" id="num3">3</div>
+        <div class="unselected" id="num4">4</div>
+        <div class="unselected" id="num5">5</div>
+        <div class="unselected" id="num6">6</div>
+        <div class="unselected" id="num7">7</div>
+        <div class="unselected" id="num8">8</div>
+        <div class="unselected" id="num9">9</div>
+        <div class="unselected" id="num10">10</div>
+      </div>
+    </div>
+    
+    <div class="max">
+      <div class="text">
+        <div class="a">Сложение и вычитание до&nbsp;</div>
+        <input type="number" class="value" id="m" value="10" step="10" min="10" max="100"></input>
+      </div>
+      <div class="slider">
+        <input type="range" class="range" id="max" value="10" step="10" min="10" max="100">
+      </div>
+
+    </div>
+    
+    <div class="questions">
+      <div class="text">
+        <div class="b">Количество заданий:&nbsp;</div>
+        <input type="number" class="value" id="q" value="5" step="5" min="5" max="30"></input>
+      </div>
+      <div class="slider">
+        <input type="range" class="range" id="questions" value="5" step="5" min="5" max="30">
+      </div>
+
+    </div>
+    <div class="buttons">
+      <div class="button" id="reset">×</div>
+      <div class="button" id="start">Начать</div>
+    </div>
+  </div>
+  <!-- <script type="module" src="./export.js"></script> -->
+  <script src="../scripts/settings.js"></script>
+</body>
+<html>
