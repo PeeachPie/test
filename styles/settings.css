@@ -1,0 +1,429 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+html, body {
+  margin: 0;
+  min-height: 100vh;
+  font-size: 4vmin;
+  font-family: 'Roboto', sans-serif;
+  color: #ebebeb;
+}
+
+body {
+  background: #1f1f1f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  border: 0.5vmin solid #4a4a4a;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  width: 90vmin;
+  height: 120vmin;
+  max-height: 90vh;
+  border-radius: 6vmin;
+  -moz-border-radius: 6vmin;
+  -webkit-border-radius: 6vmin;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.container > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.container .text {
+  font-size: 4.5vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 3vmin;
+}
+
+.container .numbers {
+  font-size: 4.5vmin;
+}
+
+.container .numbers .choose {
+  width: 80vmin;
+}
+
+.container .numbers .choose * {
+  border-radius: 1vmin;
+  width: 7vmin;
+  height: 7vmin;
+}
+
+.container .value {
+  border: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 0.5vmin solid #4a4a4a;
+  width: 10vmin;
+  color: #ebebeb;
+  font-size: 4.5vmin;
+  text-align: center;
+  padding: 0;
+}
+
+.container .value:focus {
+  outline: none;
+}
+
+.container .value::-webkit-outer-spin-button, .container .value::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container .selected {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0.5vmin solid;
+  background-color: inherit;
+}
+
+.container #plus {
+  border-color: #16ff01;
+}
+
+.container #plus:hover {
+  color: #16ff01;
+}
+
+.container #minus {
+  border-color: #afff01;
+}
+
+.container #minus:hover {
+  color: #afff01;
+}
+
+.container #multiply {
+  border-color: #ffc401;
+}
+
+.container #multiply:hover {
+  color: #ffc401;
+}
+
+.container #division {
+  border-color: #ff8801;
+}
+
+.container #division:hover {
+  color: #ff8801;
+}
+
+.container #num1 {
+  border-color: #16ff01;
+}
+
+.container #num1:hover {
+  color: #16ff01;
+}
+
+.container #num2 {
+  border-color: #50ff01;
+}
+
+.container #num2:hover {
+  color: #50ff01;
+}
+
+.container #num3 {
+  border-color: #8aff01;
+}
+
+.container #num3:hover {
+  color: #8aff01;
+}
+
+.container #num4 {
+  border-color: #c4ff01;
+}
+
+.container #num4:hover {
+  color: #c4ff01;
+}
+
+.container #num5 {
+  border-color: #ffff01;
+}
+
+.container #num5:hover {
+  color: #ffff01;
+}
+
+.container #num6 {
+  border-color: #ffe701;
+}
+
+.container #num6:hover {
+  color: #ffe701;
+}
+
+.container #num7 {
+  border-color: #ffcf01;
+}
+
+.container #num7:hover {
+  color: #ffcf01;
+}
+
+.container #num8 {
+  border-color: #ffb701;
+}
+
+.container #num8:hover {
+  color: #ffb701;
+}
+
+.container #num9 {
+  border-color: #ff9f01;
+}
+
+.container #num9:hover {
+  color: #ff9f01;
+}
+
+.container #num10 {
+  border-color: #ff8801;
+}
+
+.container #num10:hover {
+  color: #ff8801;
+}
+
+.container .unselected {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0.5vmin solid #4a4a4a !important;
+}
+
+.container .operators {
+  font-size: 8vmin;
+}
+
+.container .operators .choose {
+  width: 55vmin;
+}
+
+.container .operators .choose * {
+  width: 12vmin;
+  height: 12vmin;
+  border-radius: 6vmin;
+}
+
+.container .choose {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  color: #ebebeb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+}
+
+.container .choose * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.container .slider {
+  width: 50vmin;
+}
+
+.container .slider .range {
+  width: 100%;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3vmin;
+  background: #1f1f1f;
+  outline: none;
+  border-radius: 1.5vmin;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.container .slider .range::-webkit-slider-runnable-track {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 1.5vmin;
+  border: 0.5vmin solid #4a4a4a;
+  height: 3vmin;
+}
+
+.container .slider .range::-webkit-slider-thumb {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #1f1f1f;
+  border: 0.5vmin solid #16ff01;
+  border-radius: 100%;
+  cursor: pointer;
+  width: 4.5vmin;
+  height: 4.5vmin;
+  margin-top: -1.35vmin;
+}
+
+.container .slider .range::-moz-range-track {
+  box-sizing: border-box;
+  border-radius: 1.5vmin;
+  border: 0.5vmin solid #4a4a4a;
+  height: 3vmin;
+}
+
+.container .slider .range::-moz-range-thumb {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  background: #1f1f1f;
+  border: 0.5vmin solid #16ff01;
+  border-radius: 100%;
+  cursor: pointer;
+  width: 4.5vmin;
+  height: 4.5vmin;
+  margin-top: -1.35vmin;
+}
+
+.container .slider .range::after, .container .slider .range::before {
+  position: absolute;
+  font-size: 3vmin;
+  font-family: 'Roboto', sans-serif;
+  color: #777777;
+  top: -7%;
+}
+
+.container #max::after {
+  content: '100';
+  left: 102%;
+}
+
+.container #max::before {
+  content: '10';
+  right: 102%;
+}
+
+.container #questions::after {
+  content: '30';
+  left: 102%;
+}
+
+.container #questions::before {
+  content: '5';
+  right: 102%;
+}
+
+.container .buttons {
+  width: auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.container .buttons .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 4.5vmin;
+  width: auto;
+  color: #ebebeb;
+  border-radius: 6vmin;
+  -moz-border-radius: 6vmin;
+  -webkit-border-radius: 6vmin;
+}
+
+.container .buttons #reset {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0.5vmin solid #ff3737;
+  font-size: 8vmin;
+  margin-right: 3vmin;
+  width: 12vmin;
+  height: 12vmin;
+}
+
+.container .buttons #reset:hover {
+  background: rgba(255, 55, 55, 0.6);
+}
+
+.container .buttons #start {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0.5vmin solid #16ff01;
+  width: 24vmin;
+  height: 12vmin;
+}
+
+.container .buttons #start:hover {
+  background: rgba(80, 255, 80, 0.6);
+}
+/*# sourceMappingURL=settings.css.map */

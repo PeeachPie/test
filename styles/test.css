@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+html, body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  color: #ebebeb;
+}
+
+body {
+  background: #1f1f1f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  border: 0.5vmin solid;
+  width: 90vmin;
+  height: 50vmin;
+  margin: auto;
+  margin-top: 25vh;
+  padding: 5vmin;
+  position: relative;
+  width: 80vmin;
+  height: 40vmin;
+  border-radius: 6vmin;
+  -moz-border-radius: 6vmin;
+  -webkit-border-radius: 6vmin;
+}
+
+.container .counter {
+  color: #b8b8b8;
+  font-size: 3.5vmin;
+}
+
+.container .task .equation {
+  margin-top: 6.5vmin;
+  font-size: 12vmin;
+  height: 12vmin;
+  border-radius: 2vmin;
+  -moz-border-radius: 2vmin;
+  -webkit-border-radius: 2vmin;
+}
+
+.container .task .equation #answer {
+  font-size: 12vmin;
+  font-family: 'Roboto', sans-serif;
+  width: 20vmin;
+  height: 13vmin;
+  text-align: center;
+  background-color: inherit;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 0.5vmin solid #4a4a4a;
+  color: #ebebeb;
+  padding: 0;
+}
+
+.container .task .equation #answer:focus {
+  outline: none;
+}
+
+.container .task .equation #answer::-webkit-outer-spin-button, .container .task .equation #answer::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container .task .check {
+  width: 30vmin;
+}
+
+.container .task .check:hover {
+  background: #4a4a4a;
+}
+
+.container .result .message {
+  margin-top: 6.5vmin;
+  font-size: 10vmin;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.container .result .new {
+  width: 22vmin;
+}
+
+.container .result .new:hover {
+  background: #4a4a4a;
+}
+
+.container .check, .container .new {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0.5vmin solid #4a4a4a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 5vmin;
+  height: 11vmin;
+  margin: auto;
+  margin-top: 7vmin;
+  border-radius: 6vmin;
+  -moz-border-radius: 6vmin;
+  -webkit-border-radius: 6vmin;
+}
+/*# sourceMappingURL=test.css.map */

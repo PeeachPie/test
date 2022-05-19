@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+html, body {
+  margin: 0;
+  min-height: 100vh;
+  font-size: 4vmin;
+  font-family: 'Roboto', sans-serif;
+  color: #ebebeb;
+}
+
+body {
+  background: #1f1f1f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  border: 0.5vmin solid #4a4a4a;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -ms-flex-line-pack: distribute;
+  align-content: space-around;
+  width: 90vmin;
+  height: 120vmin;
+  max-height: 90vh;
+  border-radius: 6vmin;
+  -moz-border-radius: 6vmin;
+  -webkit-border-radius: 6vmin;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.container .settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+  text-decoration: none;
+  font-size: 4.5vmin;
+  width: 70vmin;
+  height: 11vmin;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0.5vmin solid #16ff01;
+  border-radius: 6vmin;
+  -moz-border-radius: 6vmin;
+  -webkit-border-radius: 6vmin;
+}
+
+.container .settings:link {
+  color: #ebebeb;
+}
+
+.container .settings:visited {
+  color: #ebebeb;
+}
+
+.container .settings:hover {
+  background: rgba(80, 255, 80, 0.6);
+}
+
+.container .lvl {
+  position: relative;
+  width: 90%;
+  height: 12%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 2vmin;
+  font-size: 3vmin;
+}
+
+.container .lvl .num {
+  font-size: 4vmin;
+  position: absolute;
+  left: 5%;
+  top: 25%;
+}
+
+.container .lvl .text {
+  width: 100%;
+}
+
+.container .lvl .text p {
+  margin: 0;
+}
+/*# sourceMappingURL=index.css.map */
