@@ -1,19 +1,27 @@
+const $questionsSettings = document.querySelector('.questions-settings');
+
+const $questionsNumber = document.querySelector("#q");
+const $questionsRange  = document.querySelector("#questions");
+
+const $operatorsSettings = document.querySelector('.operators-settings');
+
 const $operators = document.querySelectorAll(".operators .choose > *");
 const $numbers   = document.querySelectorAll(".numbers .choose > *");
-
-const $numbersBlock = document.querySelector('.numbers')
-const $maxBlock = document.querySelector('.max')
 
 const [$plus, $minus, $multiply, $division]      = $operators;
 const [$n1,$n2,$n3,$n4,$n5,$n6,$n7,$n8,$n9,$n10] = $numbers;
 
-const $start           = document.querySelector("#start");
+const $numbersBlock = document.querySelector('.numbers')
+const $maxBlock     = document.querySelector('.max')
+
+
+const $next   = document.querySelector("#next");
+const $reset  = document.querySelector("#reset");
+const $return = document.querySelector("#return");
+const $start  = document.querySelector("#start");
+
 const $maxRange        = document.querySelector("#max");
 const $maxNumber       = document.querySelector("#m");
-const $questionsNumber = document.querySelector("#q");
-const $questionsRange  = document.querySelector("#questions");
-
-const $reset = document.querySelector("#reset");
 
 function getRandom(min, max) {
   return Math.round(Math.random() * (max - min) + min);
@@ -163,13 +171,11 @@ function resetSettings() {
 }
 
 function hideElement(element) {
-  element.style.pointerEvents = 'none'
-  element.style.opacity = '0.7'
+  element.style.display = "none";
 }
 
 function showElement(element) {
-  element.style.pointerEvents = 'auto'
-  element.style.opacity = '1.0'
+  element.style.display = "flex";
 }
 
 for (let i = 0; i < $operators.length; i++) {
@@ -200,9 +206,9 @@ $questionsNumber.addEventListener('change', () => {
 $questionsRange.addEventListener("input", setQuestions);
 
 $start.addEventListener("click", () => {
-  window.location.href = "../pages/test.html"
   localStorage.problems = JSON.stringify(Tasks.createEquations());
   localStorage.questions = JSON.stringify(Tasks.questions);
+  window.location.href = "../pages/test.html"
 });
 
 window.addEventListener('load', resetSettings)
@@ -222,5 +228,15 @@ window.addEventListener('click', () => {
 })
 
 $reset.addEventListener('click', resetSettings)
+
+$next.addEventListener('click', () => {
+  hideElement($operatorsSettings)
+  showElement($questionsSettings)
+})
+
+$return.addEventListener('click', () => {
+  hideElement($questionsSettings)
+  showElement($operatorsSettings)
+})
 
 hideElement($numbersBlock)
