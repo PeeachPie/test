@@ -26,6 +26,58 @@ body {
   display: flex;
 }
 
+.container .operators-settings, .container .questions-settings {
+  border: 0.5vmin solid #4a4a4a;
+  border-radius: 6vmin;
+  -moz-border-radius: 6vmin;
+  -webkit-border-radius: 6vmin;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.container .operators-settings > *, .container .questions-settings > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.container .operators-settings .text, .container .questions-settings .text {
+  font-size: 4.5vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
 .container .slider {
   width: 50vmin;
 }
@@ -93,6 +145,25 @@ body {
   top: -7%;
 }
 
+.container .buttons .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 4.5vmin;
+  width: auto;
+  color: #ebebeb;
+  border-radius: 6vmin;
+  -moz-border-radius: 6vmin;
+  -webkit-border-radius: 6vmin;
+}
+
 .container .value {
   border: 0;
   font-family: 'Roboto', sans-serif;
@@ -117,57 +188,10 @@ body {
 }
 
 .container .operators-settings {
-  border: 0.5vmin solid #4a4a4a;
-  border-radius: 6vmin;
-  -moz-border-radius: 6vmin;
-  -webkit-border-radius: 6vmin;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-line-pack: distribute;
-      align-content: space-around;
-  width: 100%;
   height: 75vmin;
-  max-height: 75vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.container .operators-settings > * {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 100%;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .container .operators-settings .text {
-  font-size: 4.5vmin;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   margin-bottom: 3vmin;
 }
 
@@ -308,6 +332,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 0.5vmin solid #4a4a4a !important;
+  color: #777777;
 }
 
 .container .operators-settings .operators {
@@ -375,33 +400,14 @@ body {
           justify-content: flex-start;
 }
 
-.container .operators-settings .buttons .button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-align: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 4.5vmin;
-  width: auto;
-  color: #ebebeb;
-  border-radius: 6vmin;
-  -moz-border-radius: 6vmin;
-  -webkit-border-radius: 6vmin;
-  width: 12vmin;
-  height: 12vmin;
-}
-
 .container .operators-settings .buttons #reset {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 0.5vmin solid #ff3737;
   font-size: 8vmin;
   margin-right: 3vmin;
+  width: 12vmin;
+  height: 12vmin;
 }
 
 .container .operators-settings .buttons #reset:hover {
@@ -412,6 +418,8 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 0.5vmin solid #16ff01;
+  width: 12vmin;
+  height: 12vmin;
 }
 
 .container .operators-settings .buttons #next:hover {
@@ -419,57 +427,11 @@ body {
 }
 
 .container .questions-settings {
-  border: 0.5vmin solid #4a4a4a;
-  width: 100%;
   height: 50vmin;
-  border-radius: 6vmin;
-  -moz-border-radius: 6vmin;
-  -webkit-border-radius: 6vmin;
-  margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   display: none;
 }
 
-.container .questions-settings > * {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  width: 100%;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .container .questions-settings .text {
-  font-size: 4.5vmin;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   margin-top: 9vmin;
   margin-bottom: 5vmin;
 }
@@ -494,25 +456,6 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-}
-
-.container .questions-settings .buttons .button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-align: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 4.5vmin;
-  width: auto;
-  color: #ebebeb;
-  border-radius: 6vmin;
-  -moz-border-radius: 6vmin;
-  -webkit-border-radius: 6vmin;
 }
 
 .container .questions-settings .buttons #return {
