@@ -35,7 +35,6 @@ function createNewTask(problems) {
     localStorage.problems = JSON.stringify(problems);
     window.location.href = "../pages/result.html";
   } else {
-    // $counter.style.color = "rgba(90, 90, 90, 0.8)";
     $counter.textContent = `${counter} задание из ${questions}`;
     $task.style.display = "block";
     $result.style.display = "none";
@@ -64,7 +63,6 @@ function showAns() {
 
 // отображается в случае правильного ответа
 function rightAns() {
-  // $container.style.background = "rgba(80, 255, 80, 0.5)";
   $container.style.border = "0.5vmin solid rgb(22, 255, 1)";
   $message.style.color = 'rgb(22, 255, 1)'
   $message.textContent = randomChoice([
@@ -77,7 +75,6 @@ function rightAns() {
 
 // отображается в случае неправильного ответа
 function wrongAns() {
-  // $container.style.background = "rgba(255, 55, 55, 0.5)";
   $container.style.border = "0.5vmin solid rgb(255, 55, 55)";
   $message.style.color = 'rgb(255, 55, 55)'
   $message.textContent = randomChoice([
