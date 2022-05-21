@@ -20,8 +20,8 @@ const $reset  = document.querySelector("#reset");
 const $return = document.querySelector("#return");
 const $start  = document.querySelector("#start");
 
-const $maxRange        = document.querySelector("#max");
-const $maxNumber       = document.querySelector("#m");
+const $maxRange  = document.querySelector("#max");
+const $maxNumber = document.querySelector("#m");
 
 function getRandom(min, max) {
   return Math.round(Math.random() * (max - min) + min);
