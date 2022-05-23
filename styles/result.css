@@ -38,18 +38,19 @@ body {
   margin-bottom: 3vmin;
 }
 
-.container .result .answers .right {
-  margin-bottom: 0.5vmin;
+.container .result .answers {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.container .result .answers .right {
+  margin-bottom: 0.5vmin;
   border-left: 0.5vmin solid #50ff50;
   color: #50ff50;
 }
 
 .container .result .answers .wrong {
   margin-bottom: 0.5vmin;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   border-right: 0.5vmin solid #ff3737;
   color: #ff3737;
 }
@@ -99,4 +100,3 @@ body {
 .container .result .buttons .home:hover {
   background: rgba(80, 255, 80, 0.6);
 }
-/*# sourceMappingURL=result.css.map */
