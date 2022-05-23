@@ -56,7 +56,7 @@ body {
   border: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-bottom: 0.5vmin solid #4a4a4a;
+  border-bottom: 0.3vmin solid #4a4a4a;
   color: #ebebeb;
   padding: 0;
 }
@@ -74,28 +74,19 @@ body {
   width: 30vmin;
 }
 
-.container .task .check:hover {
-  background: #4a4a4a;
-}
-
 .container .result .message {
   margin-top: 6.5vmin;
   font-size: 10vmin;
-  color: rgba(255, 255, 255, 0.7);
 }
 
 .container .result .new {
   width: 22vmin;
 }
 
-.container .result .new:hover {
-  background: #4a4a4a;
-}
-
 .container .check, .container .new {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 0.5vmin solid #4a4a4a;
+  border: 0.5vmin solid #777777;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,4 +109,7 @@ body {
   -moz-border-radius: 6vmin;
   -webkit-border-radius: 6vmin;
 }
-/*# sourceMappingURL=test.css.map */
+
+.container .check:hover, .container .new:hover {
+  background: #7777779f;
+}
