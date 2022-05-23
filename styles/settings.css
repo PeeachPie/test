@@ -1,4 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.container .buttons .button, .container .operators-settings .choose * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 html, body {
   margin: 0;
   min-height: 100vh;
@@ -12,10 +25,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
 }
 
 .container {
@@ -31,10 +40,6 @@ body {
   border-radius: 6vmin;
   -moz-border-radius: 6vmin;
   -webkit-border-radius: 6vmin;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-line-pack: distribute;
-      align-content: space-around;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -52,13 +57,11 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   width: 100%;
   -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -146,18 +149,10 @@ body {
 }
 
 .container .buttons .button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-align: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 4.5vmin;
-  width: auto;
+  height: 12vmin;
   color: #ebebeb;
   border-radius: 6vmin;
   -moz-border-radius: 6vmin;
@@ -188,6 +183,10 @@ body {
 }
 
 .container .operators-settings {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
   height: 75vmin;
 }
 
@@ -359,24 +358,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
   width: 100%;
-}
-
-.container .operators-settings .choose * {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-align: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .container .operators-settings #max::after {
@@ -401,13 +383,10 @@ body {
 }
 
 .container .operators-settings .buttons #reset {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   border: 0.5vmin solid #ff3737;
   font-size: 8vmin;
   margin-right: 3vmin;
   width: 12vmin;
-  height: 12vmin;
 }
 
 .container .operators-settings .buttons #reset:hover {
@@ -415,11 +394,8 @@ body {
 }
 
 .container .operators-settings .buttons #next {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   border: 0.5vmin solid #16ff01;
   width: 12vmin;
-  height: 12vmin;
 }
 
 .container .operators-settings .buttons #next:hover {
@@ -433,7 +409,6 @@ body {
 
 .container .questions-settings .text {
   margin-top: 9vmin;
-  margin-bottom: 5vmin;
 }
 
 .container .questions-settings #questions::after {
@@ -446,8 +421,12 @@ body {
   right: 102%;
 }
 
+.container .questions-settings .slider {
+  margin-top: 6vmin;
+}
+
 .container .questions-settings .buttons {
-  margin-top: 8vmin;
+  margin-top: 6vmin;
   width: auto;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -459,12 +438,9 @@ body {
 }
 
 .container .questions-settings .buttons #return {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   border: 0.5vmin solid #777777;
   margin-right: 3vmin;
   width: 12vmin;
-  height: 12vmin;
 }
 
 .container .questions-settings .buttons #return:hover {
@@ -472,11 +448,8 @@ body {
 }
 
 .container .questions-settings .buttons #start {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   border: 0.5vmin solid #16ff01;
   width: 24vmin;
-  height: 12vmin;
 }
 
 .container .questions-settings .buttons #start:hover {
