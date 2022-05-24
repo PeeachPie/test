@@ -166,8 +166,6 @@ function resetSettings() {
 
   changeFill(0, $maxRange);
   changeFill(0, $questionsRange);
-
-  hideElement($numbersBlock);
 }
 
 function hideElement(element) {
@@ -215,21 +213,15 @@ window.addEventListener("load", resetSettings);
 window.addEventListener("unload", resetSettings);
 
 window.addEventListener("click", () => {
-  if (
-    Tasks.operators.indexOf("+") === -1 &&
-    Tasks.operators.indexOf("-") === -1
-  ) {
-    hideElement($maxBlock);
-  } else {
+  if (Tasks.operators.includes("+") || Tasks.operators.includes("-")) {
     showElement($maxBlock);
-  }
-  if (
-    Tasks.operators.indexOf("*") === -1 &&
-    Tasks.operators.indexOf("/") === -1
-  ) {
-    hideElement($numbersBlock);
   } else {
+    hideElement($maxBlock);
+  }
+  if (Tasks.operators.includes("*") || Tasks.operators.includes("/")) {
     showElement($numbersBlock);
+  } else {
+    hideElement($numbersBlock);
   }
 });
 
