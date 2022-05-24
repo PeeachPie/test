@@ -190,6 +190,10 @@ body {
   height: 75vmin;
 }
 
+.container .operators-settings .numbers {
+  display: none;
+}
+
 .container .operators-settings .text {
   margin-bottom: 3vmin;
 }
