@@ -1,5 +1,8 @@
 "use strict";
 
+// import {getRandom, randomChoice} from './utilits.js';
+import { Task } from './Tasks.js';
+
 const $questionsSettings = document.querySelector(".questions-settings");
 
 const $questionsNumber = document.querySelector("#q");
@@ -10,8 +13,8 @@ const $operatorsSettings = document.querySelector(".operators-settings");
 const $operators = document.querySelectorAll(".operators .choose > *");
 const $numbers = document.querySelectorAll(".numbers .choose > *");
 
-const [$plus, $minus, $multiply, $division] = $operators;
-const [$n1, $n2, $n3, $n4, $n5, $n6, $n7, $n8, $n9, $n10] = $numbers;
+// const [$plus, $minus, $multiply, $division] = $operators;
+// const [$n1, $n2, $n3, $n4, $n5, $n6, $n7, $n8, $n9, $n10] = $numbers;
 
 const $numbersBlock = document.querySelector(".numbers");
 const $maxBlock = document.querySelector(".max");
@@ -24,80 +27,12 @@ const $start = document.querySelector("#start");
 const $maxRange = document.querySelector("#max");
 const $maxNumber = document.querySelector("#m");
 
-function getRandom(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
-
-function randomChoice(choice) {
-  return choice[getRandom(0, choice.length - 1)];
-}
-
-let Tasks = {
-  operators: ["+"], // операторы
-  numbers: [1],     // множители/числители
-  max: 10,          // максимальное значение для сложения/вычитания
-  questions: 5,     // количество вопросов в тесте
-
-  // устанавливает значение по селектору
-  setter(selector, value, button) {
-    let index = this[selector].indexOf(value);
-    if (index === -1) {
-      this[selector].push(value);
-      button.className = "selected";
-    } else if (this[selector].length > 1) {
-      this[selector].splice(index, 1);
-      button.className = "unselected";
-    }
-  },
-
-  // устанавливает оператор
-  setOperator: function (value, button) {
-    Tasks.setter("operators", value, button);
-  },
-
-  // утанавливает делитель/множитель
-  setNumber: function (value, button) {
-    Tasks.setter("numbers", value, button);
-  },
-
-  // создает пример
-  createEquation(operator, max) {
-    let a, b;
-    switch (operator) {
-      case "+":
-        a = getRandom(0, max / 2);
-        b = getRandom(0, max / 2);
-        return [`${a} + ${b} = `, a + b];
-      case "-":
-        a = getRandom(0, max);
-        b = getRandom(0, a);
-        return [`${a} - ${b} = `, a - b];
-      case "/":
-        a = randomChoice(this.numbers);
-        b = getRandom(0, 10);
-        return [`${a * b} ÷ ${a} = `, b];
-      case "*":
-        a = getRandom(0, 10);
-        b = randomChoice(this.numbers);
-        return [`${a} × ${b} = `, a * b];
-    }
-  },
-
-  // создает примеры
-  createEquations() {
-    let problems = [];
-    for (let i = 1; i <= this.questions; i++) {
-      let equation = this.createEquation(randomChoice(this.operators), this.max);
-      problems.push({
-        eq: equation[0],
-        ans: equation[1],
-        given: null,
-        right: false,
-      });
-    }
-    return problems;
-  },
-};
+let Tasks = new Task({
+  operators: ["+"],
+  numbers: [1],
+  max: 10,  
+  questions: 5
+})
 
 // обрабатывает событие двойного нажатия
 function doubleClick(button) {
@@ -142,7 +77,8 @@ function changeFill(perсent, range) {
   } else if (perсent <= 12) {
     perсent++;
   }
-  range.style.background = `linear-gradient(90deg, rgb(22, 255, 1) ${perсent}%, 
+  range.style.background = `linear-gradient(90deg, 
+  rgb(22, 255, 1) ${perсent}%, 
   #1f1f1f ${perсent}%)`;
 }
 
@@ -170,24 +106,26 @@ function resetSettings() {
 
 function hideElement(element) {
   element.style.display = "none";
+  // element.hidden = true;
 }
 
 function showElement(element) {
   element.style.display = "flex";
+  // element.hidden = false;
 }
 
 for (let i = 0; i < $operators.length; i++) {
-  $operators[i].addEventListener(
-    "click",
-    Tasks.setOperator.bind(Tasks, ["+", "-", "*", "/"][i], $operators[i])
-  );
+  $operators[i].addEventListener("click", Tasks.setOperator.bind(Tasks, ["+", "-", "*", "/"][i], $operators[i]));
 }
 
 for (let i = 0; i < $numbers.length; i++) {
-  $numbers[i].addEventListener("click", Tasks.setNumber.bind(Tasks, i + 1, $numbers[i])
-  );
+  $numbers[i].addEventListener("click", Tasks.setNumber.bind(Tasks, i + 1, $numbers[i]));
   $numbers[i].addEventListener("click", doubleClick.bind(null, $numbers[i]));
 }
+
+// $numbersBlock.addEventListener("click", (event) => {
+
+// })
 
 $maxNumber.addEventListener("change", () => {
   $maxRange.value = $maxNumber.value;
@@ -204,8 +142,9 @@ $questionsNumber.addEventListener("change", () => {
 $questionsRange.addEventListener("input", setQuestions);
 
 $start.addEventListener("click", () => {
-  localStorage.problems = JSON.stringify(Tasks.createEquations());
-  localStorage.questions = JSON.stringify(Tasks.questions);
+  Tasks.createEquations()
+  localStorage.setItem("problems", JSON.stringify(Tasks.problems));
+  localStorage.setItem("questions", JSON.stringify(Tasks.questions));
   window.location.href = "../pages/test.html";
 });
 
@@ -236,3 +175,7 @@ $return.addEventListener("click", () => {
   hideElement($questionsSettings);
   showElement($operatorsSettings);
 });
+
+// $numbersBlock.addEventListener("click", (event) => {
+//   Tasks.setNumber(2, event.target)
+// })

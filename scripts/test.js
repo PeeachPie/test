@@ -1,19 +1,21 @@
 "use strict";
 
+import {randomChoice} from './utilits.js';
+
 const questions = JSON.parse(localStorage.questions);
-let $container = document.querySelector(".container");
-let $result = document.querySelector(".result");
-let $task = document.querySelector(".task");
-let $problem = document.querySelector(".problem");
-let $answer = document.querySelector("#answer");
-let $new = document.querySelector(".new");
-let $check = document.querySelector(".check");
-let $message = document.querySelector(".message");
-let $counter = document.querySelector(".counter");
+const $container = document.querySelector(".container");
+const $result = document.querySelector(".result");
+const $task = document.querySelector(".task");
+const $problem = document.querySelector(".problem");
+const $answer = document.querySelector("#answer");
+const $new = document.querySelector(".new");
+const $check = document.querySelector(".check");
+const $message = document.querySelector(".message");
+const $counter = document.querySelector(".counter");
 
 let counter = 0;
 
-let problems = JSON.parse(localStorage.problems);
+let problems = JSON.parse(localStorage.getItem("problems"));
 
 problems.checkAns = function () {
   this[counter].given = Number.parseInt($answer.value);
@@ -23,18 +25,10 @@ problems.checkAns = function () {
   return this[counter - 1].right;
 };
 
-function getRandom(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
-
-function randomChoice(choice) {
-  return choice[getRandom(0, choice.length - 1)];
-}
-
 // создает новое задание
 function createNewTask(problems) {
   if (counter + 1 > questions) {
-    localStorage.problems = JSON.stringify(problems);
+    localStorage.setItem("problems", JSON.stringify(problems));
     window.location.href = "../pages/result.html";
   } else {
     $counter.textContent = `${counter + 1} задание из ${questions}`;
@@ -45,11 +39,11 @@ function createNewTask(problems) {
   }
 }
 
-function change(...elements) {
-  for (let el of elements) {
-    el.style.display = el.style.display === "block" ? "none" : "block";
-  }
-}
+// function change(...elements) {
+//   for (let el of elements) {
+//     el.style.display = el.style.display === "block" ? "none" : "block";
+//   }
+// }
 
 // показывает результат ответа
 function showAns() {
@@ -87,4 +81,3 @@ $answer.addEventListener("change", showAns);
 $new.addEventListener("click", createNewTask.bind(null, problems));
 
 createNewTask(problems);
-
