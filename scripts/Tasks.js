@@ -67,8 +67,8 @@ export class Task {
       });
     }
   }
+  
   // подсчитывает поличество правильных ответов
-
   get right() {
     return this.problems.reduce((total, problem) => problem.right ? total + 1 : total, 0);
   }
