@@ -1,39 +1,30 @@
 "use strict";
 
-const problems  = JSON.parse(localStorage.problems);
-const questions = JSON.parse(localStorage.questions);
+import { Task } from './Tasks.js';
 
-let $answers = document.querySelector(".answers");
-let $right   = document.querySelector(".rightAns");
-let $correct = document.querySelector(".correct");
-let $home    = document.querySelector(".home");
+const $answers = document.querySelector(".answers");
+const $right   = document.querySelector(".rightAns");
+const $correct = document.querySelector(".correct");
+const $home    = document.querySelector(".home");
 
-let Tasks = {
-  problems: problems,
-  questions: questions,
+let Tasks = new Task({
+  operators: ["+"],
+  numbers: [1],
+  max: 10,  
+  questions: JSON.parse(localStorage.getItem("questions"))
+})
 
-  // подсчитывает поличество правильных ответов
-  countRight() {
-    return this.problems.reduce((total, problem) => problem.right ? total + 1 : total, 0);
-  },
-
-  // находит неправильные примеры
-  wrongProblems() {
-    return problems.filter((problem) => !problem.right);
-  },
-};
-
-Tasks.right = Tasks.countRight();
+Tasks.problems = JSON.parse(localStorage.getItem("problems"));
 
 // показывает результаты ответов
-function showAnswers(problems, number) {
-  for (let i = 0; i < number; i++) {
+function showAnswers() {
+  for (let i = 0; i < Tasks.questions; i++) {
     let el = document.createElement("div");
-    el.className = problems[i].right ? "right" : "wrong";
+    el.className = Tasks.problems[i].right ? "right" : "wrong";
     el.innerHTML = `
-    ${problems[i].eq}
-    ${problems[i].given == null ? "" : problems[i].given}
-    ${problems[i].right ? "" : `&nbsp;&nbsp;(${problems[i].ans})`}
+    ${Tasks.problems[i].eq}
+    ${Tasks.problems[i].given == null ? "" : Tasks.problems[i].given}
+    ${Tasks.problems[i].right ? "" : `&nbsp;&nbsp;(${Tasks.problems[i].ans})`}
     `;
     $answers.append(el);
   }
@@ -41,19 +32,19 @@ function showAnswers(problems, number) {
 
 // выбирает и устанавливает неправильно решенные примеры
 function correctionOfMistakes() {
-  localStorage.problems = JSON.stringify(Tasks.wrongProblems());
-  localStorage.questions = JSON.stringify(Tasks.questions - Tasks.right);
+  localStorage.setItem("problems", JSON.stringify(Tasks.wrongProblems));
+  localStorage.setItem("questions", JSON.stringify(Tasks.questions - Tasks.right));
 }
 
 // демонстрирует результат тестирования
-function showResult(problems, number) {
+function showResult() {
   $right.textContent = `Результат: ${Tasks.right} из ${Tasks.questions}`;
-  showAnswers(problems, number);
+  showAnswers();
 }
 
-showResult(problems, questions);
+showResult();
 
-if (questions == Tasks.right) {
+if (Tasks.questions == Tasks.right) {
   $correct.style.display = "none";
 }
 
