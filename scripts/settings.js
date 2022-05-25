@@ -1,6 +1,5 @@
 "use strict";
 
-// import {getRandom, randomChoice} from './utilits.js';
 import { Task } from './Tasks.js';
 
 const $questionsSettings = document.querySelector(".questions-settings");
@@ -12,9 +11,6 @@ const $operatorsSettings = document.querySelector(".operators-settings");
 
 const $operators = document.querySelectorAll(".operators .choose > *");
 const $numbers = document.querySelectorAll(".numbers .choose > *");
-
-// const [$plus, $minus, $multiply, $division] = $operators;
-// const [$n1, $n2, $n3, $n4, $n5, $n6, $n7, $n8, $n9, $n10] = $numbers;
 
 const $numbersBlock = document.querySelector(".numbers");
 const $maxBlock = document.querySelector(".max");
@@ -106,12 +102,10 @@ function resetSettings() {
 
 function hideElement(element) {
   element.style.display = "none";
-  // element.hidden = true;
 }
 
 function showElement(element) {
   element.style.display = "flex";
-  // element.hidden = false;
 }
 
 for (let i = 0; i < $operators.length; i++) {
@@ -122,10 +116,6 @@ for (let i = 0; i < $numbers.length; i++) {
   $numbers[i].addEventListener("click", Tasks.setNumber.bind(Tasks, i + 1, $numbers[i]));
   $numbers[i].addEventListener("click", doubleClick.bind(null, $numbers[i]));
 }
-
-// $numbersBlock.addEventListener("click", (event) => {
-
-// })
 
 $maxNumber.addEventListener("change", () => {
   $maxRange.value = $maxNumber.value;
@@ -175,7 +165,3 @@ $return.addEventListener("click", () => {
   hideElement($questionsSettings);
   showElement($operatorsSettings);
 });
-
-// $numbersBlock.addEventListener("click", (event) => {
-//   Tasks.setNumber(2, event.target)
-// })
