@@ -39,12 +39,6 @@ function createNewTask(problems) {
   }
 }
 
-// function change(...elements) {
-//   for (let el of elements) {
-//     el.style.display = el.style.display === "block" ? "none" : "block";
-//   }
-// }
-
 // показывает результат ответа
 function showAns() {
   $task.style.display = "none";
