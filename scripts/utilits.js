@@ -5,3 +5,5 @@ export function getRandom(min, max) {
 export function randomChoice(choice) {
   return choice[getRandom(0, choice.length - 1)];
 }
+
+// export {getRandom, randomChoice}

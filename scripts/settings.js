@@ -2,10 +2,12 @@
 
 import { Task } from './Tasks.js';
 
+const $info =  document.querySelector(".info");
+
 const $questionsSettings = document.querySelector(".questions-settings");
 
-const $questionsNumber = document.querySelector("#q");
-const $questionsRange = document.querySelector("#questions");
+const $questionsNumber = document.querySelector("#questions-number");
+const $questionsRange = document.querySelector("#questions-range");
 
 const $operatorsSettings = document.querySelector(".operators-settings");
 
@@ -20,15 +22,27 @@ const $reset = document.querySelector("#reset");
 const $return = document.querySelector("#return");
 const $start = document.querySelector("#start");
 
-const $maxRange = document.querySelector("#max");
-const $maxNumber = document.querySelector("#m");
+const $maxRange = document.querySelector("#max-range");
+const $maxNumber = document.querySelector("#max-number");
 
-let Tasks = new Task({
-  operators: ["+"],
-  numbers: [1],
-  max: 10,  
-  questions: 5
-})
+// const max = {
+//   block : document.querySelector(".max"),
+//   inputNumber : document.querySelector("#max-number"),
+//   inputRange : document.querySelector("#max"), 
+// }
+
+// const numbers = {
+//   block : document.querySelector(".numbers"),
+//   buttons : document.querySelectorAll(".numbers .choose > *"),
+// }
+
+// const questions = {
+//   block : document.querySelector(".max"),
+//   inputNumber : document.querySelector("#q"),
+//   inputRange : document.querySelector("#questions"), 
+// }
+
+let Tasks = new Task()
 
 // обрабатывает событие двойного нажатия
 function doubleClick(button) {
@@ -74,30 +88,28 @@ function changeFill(perсent, range) {
     perсent++;
   }
   range.style.background = `linear-gradient(90deg, 
-  rgb(22, 255, 1) ${perсent}%, 
+  rgb(212,0,255) ${perсent}%, 
   #1f1f1f ${perсent}%)`;
 }
 
 // сбрасывает настройки
 function resetSettings() {
   $numbers.forEach(($num) => ($num.className = "unselected"));
-  $numbers[0].className = "selected";
 
   $operators.forEach(($operator) => ($operator.className = "unselected"));
-  $operators[0].className = "selected";
 
-  Tasks.operators = ["+"];
-  Tasks.numbers = [1];
-  Tasks.max = 10;
-  Tasks.questions = 5;
+  Tasks.reset();
 
-  $questionsRange.value = "5";
-  $maxRange.value = "10";
-  $questionsNumber.value = "5";
-  $maxNumber.value = "10";
+  $questionsRange.value = $questionsNumber.value = "5";
+  $maxRange.value = $maxNumber.value = "10";
 
   changeFill(0, $maxRange);
   changeFill(0, $questionsRange);
+
+  unableButton($next)
+  unableButton($reset)
+
+  showElement($info)
 }
 
 function hideElement(element) {
@@ -132,25 +144,42 @@ $questionsNumber.addEventListener("change", () => {
 $questionsRange.addEventListener("input", setQuestions);
 
 $start.addEventListener("click", () => {
-  Tasks.createEquations()
+  Tasks.createProblems()
   localStorage.setItem("problems", JSON.stringify(Tasks.problems));
   localStorage.setItem("questions", JSON.stringify(Tasks.questions));
-  window.location.href = "../pages/test.html";
 });
 
-window.addEventListener("load", resetSettings);
+// window.addEventListener("load", resetSettings);
 window.addEventListener("unload", resetSettings);
 
+function ableButton(button) {
+  button.style.color = "#ebebeb"
+  button.style.pointerEvents = "auto"
+}
+
+function unableButton(button) {
+  button.style.color = "#777777"
+  button.style.pointerEvents = "none"
+}
+
 window.addEventListener("click", () => {
-  if (Tasks.operators.includes("+") || Tasks.operators.includes("-")) {
-    showElement($maxBlock);
-  } else {
-    hideElement($maxBlock);
+  Tasks.operators.includes("+") || Tasks.operators.includes("-")
+    ? showElement($maxBlock)
+    : hideElement($maxBlock);
+  Tasks.operators.includes("*") || Tasks.operators.includes("/")
+    ? showElement($numbersBlock)
+    : hideElement($numbersBlock);
+
+  if (Tasks.operators.length > 0) {
+    ableButton($reset);
+    hideElement($info)
   }
-  if (Tasks.operators.includes("*") || Tasks.operators.includes("/")) {
-    showElement($numbersBlock);
-  } else {
-    hideElement($numbersBlock);
+
+  if ((Tasks.operators.includes("*") || Tasks.operators.includes("/"))) {
+    Tasks.numbers.length > 0 ? ableButton($next) : unableButton($next);
+  } 
+  else if (Tasks.operators.includes("+") || Tasks.operators.includes("-")) {
+    ableButton($next);
   }
 });
 

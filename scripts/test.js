@@ -35,9 +35,16 @@ function createNewTask(problems) {
     $task.style.display = "block";
     $result.style.display = "none";
     $container.style.borderColor = "#4a4a4a";
+    $container.style.boxShadow = 'none'
     $problem.textContent = problems[counter].eq;
   }
 }
+
+// function change(...elements) {
+//   for (let el of elements) {
+//     el.style.display = el.style.display === "block" ? "none" : "block";
+//   }
+// }
 
 // показывает результат ответа
 function showAns() {
@@ -48,8 +55,10 @@ function showAns() {
 
 // отображается в случае правильного ответа
 function rightAns() {
-  $container.style.border = "0.5vmin solid rgb(22, 255, 1)";
-  $message.style.color = "rgb(22, 255, 1)";
+  $container.style.border = "0.5vmin solid rgb(80, 255, 80)";
+  $container.style.boxShadow = '0 0 1.5vmin rgb(80, 255, 80)'
+  $message.style.color = "rgb(80, 255, 80)";
+
   $message.textContent = randomChoice([
     "Ты молодец!",
     "Так держать!",
@@ -61,6 +70,7 @@ function rightAns() {
 // отображается в случае неправильного ответа
 function wrongAns() {
   $container.style.border = "0.5vmin solid rgb(255, 55, 55)";
+  $container.style.boxShadow = '0 0 1.5vmin rgb(255, 55, 55)'
   $message.style.color = "rgb(255, 55, 55)";
   $message.textContent = randomChoice([
     "Ой...",

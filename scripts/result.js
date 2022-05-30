@@ -3,17 +3,12 @@
 import { Task } from './Tasks.js';
 
 const $answers = document.querySelector(".answers");
-const $right   = document.querySelector(".rightAns");
+const $total   = document.querySelector(".total");
 const $correct = document.querySelector(".correct");
 const $home    = document.querySelector(".home");
 
-let Tasks = new Task({
-  operators: ["+"],
-  numbers: [1],
-  max: 10,  
-  questions: JSON.parse(localStorage.getItem("questions"))
-})
-
+let Tasks = new Task() 
+Tasks.questions = JSON.parse(localStorage.getItem("questions"))
 Tasks.problems = JSON.parse(localStorage.getItem("problems"));
 
 // показывает результаты ответов
@@ -23,8 +18,8 @@ function showAnswers() {
     el.className = Tasks.problems[i].right ? "right" : "wrong";
     el.innerHTML = `
     ${Tasks.problems[i].eq}
-    ${Tasks.problems[i].given == null ? "" : Tasks.problems[i].given}
-    ${Tasks.problems[i].right ? "" : `&nbsp;&nbsp;(${Tasks.problems[i].ans})`}
+    ${Tasks.problems[i].given == null ? "__" : Tasks.problems[i].given}
+    ${Tasks.problems[i].right ? "" : `&nbsp;(${Tasks.problems[i].ans})`}
     `;
     $answers.append(el);
   }
@@ -38,11 +33,11 @@ function correctionOfMistakes() {
 
 // демонстрирует результат тестирования
 function showResult() {
-  $right.textContent = `Результат: ${Tasks.right} из ${Tasks.questions}`;
+  $total.textContent = `Результат: ${Tasks.right} из ${Tasks.questions}`;
   showAnswers();
 }
 
-showResult();
+window.addEventListener('load', showResult);
 
 if (Tasks.questions == Tasks.right) {
   $correct.style.display = "none";

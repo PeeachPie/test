@@ -1,11 +1,19 @@
 import {getRandom, randomChoice} from './utilits.js';
 
 export class Task {
-  constructor (options) {
-    this.operators = options.operators;
-    this.numbers = options.numbers;
-    this.max = options.max;
-    this.questions = options.questions;
+  constructor () {
+    this.operators = [];
+    this.numbers = [];
+    this.max = 10;
+    this.questions = 5;
+    this.problems = [];
+  }
+
+  reset() {
+    this.operators = [];
+    this.numbers = [];
+    this.max = 10;
+    this.questions = 5;
     this.problems = [];
   }
 
@@ -32,7 +40,7 @@ export class Task {
   }
 
   // создает пример
-  createEquation(operator, max) {
+  createProblem(operator, max) {
     let a, b;
     switch (operator) {
       case "+":
@@ -56,9 +64,9 @@ export class Task {
   }
 
   // создает примеры
-  createEquations() {
+  createProblems() {
     for (let i = 1; i <= this.questions; i++) {
-      let equation = this.createEquation(randomChoice(this.operators), this.max);
+      let equation = this.createProblem(randomChoice(this.operators), this.max);
       this.problems.push({
         eq: equation[0],
         ans: equation[1],
@@ -67,7 +75,7 @@ export class Task {
       });
     }
   }
-  
+
   // подсчитывает поличество правильных ответов
   get right() {
     return this.problems.reduce((total, problem) => problem.right ? total + 1 : total, 0);
