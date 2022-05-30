@@ -19,9 +19,15 @@ button, input {
   font: inherit;
   background-color: inherit;
   color: inherit;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 a {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   outline: none;
   text-decoration: none;
 }
