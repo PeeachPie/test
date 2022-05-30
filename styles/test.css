@@ -1,26 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-html, body {
+body {
   margin: 0;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
   color: #ebebeb;
-}
-
-body {
   background: #1f1f1f;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
+  font-size: 4.5vmin;
+}
+
+button, input {
+  font: inherit;
+  background-color: inherit;
+  color: inherit;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+a:link {
+  color: #ebebeb;
+}
+
+a:visited {
+  color: #ebebeb;
 }
 
 .container {
-  border: 0.5vmin solid;
-  width: 90vmin;
-  height: 50vmin;
+  border: 0.5vmin solid #4a4a4a;
   margin: auto;
   margin-top: 25vh;
   padding: 5vmin;
@@ -28,88 +43,92 @@ body {
   width: 80vmin;
   height: 40vmin;
   border-radius: 6vmin;
-  -moz-border-radius: 6vmin;
-  -webkit-border-radius: 6vmin;
 }
 
-.container .counter {
-  color: #b8b8b8;
-  font-size: 3.5vmin;
-}
-
-.container .task .equation {
+.task, .result {
   margin-top: 6.5vmin;
-  font-size: 12vmin;
-  height: 12vmin;
-  border-radius: 2vmin;
-  -moz-border-radius: 2vmin;
-  -webkit-border-radius: 2vmin;
 }
 
-.container .task .equation #answer {
-  font-size: 12vmin;
-  font-family: 'Roboto', sans-serif;
-  width: 20vmin;
-  height: 13vmin;
-  text-align: center;
-  background-color: inherit;
-  border: 0;
+.check, .new {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-bottom: 0.3vmin solid #4a4a4a;
-  color: #ebebeb;
-  padding: 0;
-}
-
-.container .task .equation #answer:focus {
-  outline: none;
-}
-
-.container .task .equation #answer::-webkit-outer-spin-button, .container .task .equation #answer::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.container .task .check {
-  width: 30vmin;
-}
-
-.container .result .message {
-  margin-top: 6.5vmin;
-  font-size: 10vmin;
-}
-
-.container .result .new {
-  width: 22vmin;
-}
-
-.container .check, .container .new {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border: 0.5vmin solid #777777;
+  border: 0.5vmin solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-size: 5vmin;
-  height: 11vmin;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 4.5vmin;
+  height: 12vmin;
   margin: auto;
   margin-top: 7vmin;
   border-radius: 6vmin;
-  -moz-border-radius: 6vmin;
-  -webkit-border-radius: 6vmin;
 }
 
-.container .check:hover, .container .new:hover {
-  background: #7777779f;
+.counter {
+  color: #b8b8b8;
+  font-size: 3.5vmin;
 }
+
+.equation {
+  font-size: 12vmin;
+  height: 12vmin;
+  border-radius: 2vmin;
+}
+
+.result {
+  display: none;
+}
+
+.message {
+  font-size: 10vmin;
+}
+
+.new {
+  width: 22vmin;
+  border-color: #777777;
+}
+
+.new:hover {
+  -webkit-box-shadow: 0 0 1.5vmin #777777;
+          box-shadow: 0 0 1.5vmin #777777;
+}
+
+.check {
+  width: 30vmin;
+  border-color: #d400ff;
+}
+
+.check:hover {
+  -webkit-box-shadow: 0 0 1.5vmin #d400ff;
+          box-shadow: 0 0 1.5vmin #d400ff;
+}
+
+#answer {
+  padding: 0;
+  border: 0;
+  width: 20vmin;
+  height: 12vmin;
+  text-align: center;
+  background-color: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 0.3vmin solid #4a4a4a;
+  color: #ebebeb;
+}
+
+#answer:focus {
+  outline: none;
+  border-bottom: 0.3vmin solid #d400ff;
+}
+
+#answer::-webkit-outer-spin-button, #answer::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/*# sourceMappingURL=test.css.map */

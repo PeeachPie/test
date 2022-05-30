@@ -1,30 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-.container .buttons .button, .container .operators-settings .choose * {
+.info, .buttons > *, .choose * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-html, body {
-  margin: 0;
-  min-height: 100vh;
-  font-size: 4vmin;
-  font-family: 'Roboto', sans-serif;
-  color: #ebebeb;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body {
+  margin: 0;
+  min-height: 100vh;
+  font-size: 4.5vmin;
+  font-family: 'Roboto', sans-serif;
+  color: #ebebeb;
   background: #1f1f1f;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+button, input {
+  font: inherit;
+  background-color: inherit;
+  color: inherit;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+a:link {
+  color: #ebebeb;
+}
+
+a:visited {
+  color: #ebebeb;
 }
 
 .container {
@@ -35,40 +51,50 @@ body {
   display: flex;
 }
 
-.container .operators-settings, .container .questions-settings {
+.info {
+  font-size: 3vmin;
+  color: #777777;
+}
+
+.operators-settings, .questions-settings {
   border: 0.5vmin solid #4a4a4a;
   border-radius: 6vmin;
-  -moz-border-radius: 6vmin;
-  -webkit-border-radius: 6vmin;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+      -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.container .operators-settings > *, .container .questions-settings > * {
+.operators-settings > *, .questions-settings > * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -ms-flex-direction: column;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+      -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.container .operators-settings .text, .container .questions-settings .text {
-  font-size: 4.5vmin;
+.buttons > * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 12vmin;
+  color: #ebebeb;
+  border-radius: 6vmin;
+}
+
+.text-with-input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,278 +107,74 @@ body {
           justify-content: flex-start;
 }
 
-.container .slider {
-  width: 50vmin;
+.operators-settings {
+  padding: 3vmin;
 }
 
-.container .slider .range {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 3vmin;
-  background: #1f1f1f;
-  outline: none;
-  border-radius: 1.5vmin;
-  position: relative;
-  margin: 0;
-  padding: 0;
+.operators-settings > * {
+  padding: 3vmin 0;
 }
 
-.container .slider .range::-webkit-slider-runnable-track {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-radius: 1.5vmin;
-  border: 0.5vmin solid #4a4a4a;
-  height: 3vmin;
-}
-
-.container .slider .range::-webkit-slider-thumb {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-appearance: none;
-  appearance: none;
-  background: #1f1f1f;
-  border: 0.5vmin solid #16ff01;
-  border-radius: 100%;
-  cursor: pointer;
-  width: 4.5vmin;
-  height: 4.5vmin;
-  margin-top: -1.35vmin;
-}
-
-.container .slider .range::-moz-range-track {
-  box-sizing: border-box;
-  border-radius: 1.5vmin;
-  border: 0.5vmin solid #4a4a4a;
-  height: 3vmin;
-}
-
-.container .slider .range::-moz-range-thumb {
-  box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-       appearance: none;
-  background: #1f1f1f;
-  border: 0.5vmin solid #16ff01;
-  border-radius: 100%;
-  cursor: pointer;
-  width: 4.5vmin;
-  height: 4.5vmin;
-  margin-top: -1.35vmin;
-}
-
-.container .slider .range::after, .container .slider .range::before {
-  position: absolute;
-  font-size: 3vmin;
-  font-family: 'Roboto', sans-serif;
-  color: #777777;
-  top: -7%;
-}
-
-.container .buttons .button {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 4.5vmin;
-  height: 12vmin;
-  color: #ebebeb;
-  border-radius: 6vmin;
-  -moz-border-radius: 6vmin;
-  -webkit-border-radius: 6vmin;
-}
-
-.container .value {
-  border: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: inherit;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-bottom: 0.3vmin solid #4a4a4a;
-  width: 10vmin;
-  color: #ebebeb;
-  font-size: 4.5vmin;
-  text-align: center;
-  padding: 0;
-}
-
-.container .value:focus {
-  outline: none;
-}
-
-.container .value::-webkit-outer-spin-button, .container .value::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.container .operators-settings {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-line-pack: distribute;
-      align-content: space-around;
-  height: 75vmin;
-}
-
-.container .operators-settings .numbers {
-  display: none;
-}
-
-.container .operators-settings .text {
+.operators-settings .text, .operators-settings .value {
   margin-bottom: 3vmin;
 }
 
-.container .operators-settings .numbers {
-  font-size: 4.5vmin;
+.operators-settings .buttons {
+  width: auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
-.container .operators-settings .numbers .choose {
-  width: 80vmin;
+.numbers {
+  display: none;
 }
 
-.container .operators-settings .numbers .choose * {
-  border-radius: 1vmin;
-  width: 7vmin;
-  height: 7vmin;
-}
-
-.container .operators-settings .selected {
+.selected {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 0.5vmin solid;
   background-color: inherit;
 }
 
-.container .operators-settings #plus {
-  border-color: #16ff01;
-}
-
-.container .operators-settings #plus:hover {
-  color: #16ff01;
-}
-
-.container .operators-settings #minus {
-  border-color: #afff01;
-}
-
-.container .operators-settings #minus:hover {
-  color: #afff01;
-}
-
-.container .operators-settings #multiply {
-  border-color: #ffc401;
-}
-
-.container .operators-settings #multiply:hover {
-  color: #ffc401;
-}
-
-.container .operators-settings #division {
-  border-color: #ff8801;
-}
-
-.container .operators-settings #division:hover {
-  color: #ff8801;
-}
-
-.container .operators-settings #num1 {
-  border-color: #16ff01;
-}
-
-.container .operators-settings #num1:hover {
-  color: #16ff01;
-}
-
-.container .operators-settings #num2 {
-  border-color: #50ff01;
-}
-
-.container .operators-settings #num2:hover {
-  color: #50ff01;
-}
-
-.container .operators-settings #num3 {
-  border-color: #8aff01;
-}
-
-.container .operators-settings #num3:hover {
-  color: #8aff01;
-}
-
-.container .operators-settings #num4 {
-  border-color: #c4ff01;
-}
-
-.container .operators-settings #num4:hover {
-  color: #c4ff01;
-}
-
-.container .operators-settings #num5 {
-  border-color: #ffff01;
-}
-
-.container .operators-settings #num5:hover {
-  color: #ffff01;
-}
-
-.container .operators-settings #num6 {
-  border-color: #ffe701;
-}
-
-.container .operators-settings #num6:hover {
-  color: #ffe701;
-}
-
-.container .operators-settings #num7 {
-  border-color: #ffcf01;
-}
-
-.container .operators-settings #num7:hover {
-  color: #ffcf01;
-}
-
-.container .operators-settings #num8 {
-  border-color: #ffb701;
-}
-
-.container .operators-settings #num8:hover {
-  color: #ffb701;
-}
-
-.container .operators-settings #num9 {
-  border-color: #ff9f01;
-}
-
-.container .operators-settings #num9:hover {
-  color: #ff9f01;
-}
-
-.container .operators-settings #num10 {
-  border-color: #ff8801;
-}
-
-.container .operators-settings #num10:hover {
-  color: #ff8801;
-}
-
-.container .operators-settings .unselected {
+.unselected {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 0.5vmin solid #4a4a4a !important;
   color: #777777;
 }
 
-.container .operators-settings .operators {
-  font-size: 8vmin;
+.unselected:hover {
+  -webkit-box-shadow: 0 0 0.7vmin !important;
+          box-shadow: 0 0 0.7vmin !important;
 }
 
-.container .operators-settings .operators .choose {
-  width: 55vmin;
+.value {
+  border: 0;
+  padding: 0;
+  background-color: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 0.3vmin solid #4a4a4a;
+  width: 10vmin;
+  color: #d400ff;
+  text-align: center;
 }
 
-.container .operators-settings .operators .choose * {
-  width: 12vmin;
-  height: 12vmin;
-  border-radius: 6vmin;
+.value:focus {
+  outline: none;
 }
 
-.container .operators-settings .choose {
+.value::-webkit-outer-spin-button, .value::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.choose {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -365,71 +187,159 @@ body {
   width: 100%;
 }
 
-.container .operators-settings #max::after {
-  content: '100';
+.operators .choose {
+  font-size: 8vmin;
+  width: 55vmin;
+}
+
+.operators .choose * {
+  border-color: hsl(calc(310 - var(--i) * 5), 100%, 50%);
+  width: 12vmin;
+  height: 12vmin;
+  border-radius: 6vmin;
+}
+
+.operators .choose *:hover {
+  -webkit-box-shadow: 0 0 1vmin hsl(calc(310 - var(--i) * 5), 100%, 50%);
+          box-shadow: 0 0 1vmin hsl(calc(310 - var(--i) * 5), 100%, 50%);
+}
+
+.numbers, .max {
+  display: none;
+}
+
+.numbers .choose {
+  width: 80vmin;
+}
+
+.numbers .choose * {
+  border-color: hsl(calc(310 - var(--i) * 2), 100%, 50%);
+  border-radius: 1vmin;
+  width: 7vmin;
+  height: 7vmin;
+}
+
+.numbers .choose *:hover {
+  -webkit-box-shadow: 0 0 1vmin hsl(calc(310 - var(--i) * 2), 100%, 50%);
+          box-shadow: 0 0 1vmin hsl(calc(310 - var(--i) * 2), 100%, 50%);
+}
+
+.slider {
+  width: 50vmin;
+}
+
+.slider .range {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  height: 3vmin;
+  background: #1f1f1f;
+  border-radius: 1.5vmin;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.slider .range::-webkit-slider-runnable-track {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 1.5vmin;
+  border: 0.5vmin solid #4a4a4a;
+  height: 3vmin;
+}
+
+.slider .range::-webkit-slider-thumb {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-appearance: none;
+          appearance: none;
+  background: #1f1f1f;
+  border: 0.5vmin solid #d400ff;
+  border-radius: 100%;
+  cursor: pointer;
+  width: 4.5vmin;
+  height: 4.5vmin;
+  margin-top: -1.35vmin;
+}
+
+.slider .range::-moz-range-track {
+  box-sizing: border-box;
+  border-radius: 1.5vmin;
+  border: 0.5vmin solid #4a4a4a;
+  height: 3vmin;
+}
+
+.slider .range::-moz-range-thumb {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  background: #1f1f1f;
+  border: 0.5vmin solid #d400ff;
+  border-radius: 100%;
+  cursor: pointer;
+  width: 4.5vmin;
+  height: 4.5vmin;
+  margin-top: -1.35vmin;
+}
+
+.slider .range::after, .slider .range::before {
+  position: absolute;
+  font-size: 3vmin;
+  font-family: inherit;
+  color: #777777;
+  top: -7%;
+}
+
+.slider .range::after {
   left: 102%;
 }
 
-.container .operators-settings #max::before {
-  content: '10';
+.slider .range::before {
   right: 102%;
 }
 
-.container .operators-settings .buttons {
-  width: auto;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-.container .operators-settings .buttons #reset {
+#reset {
   border: 0.5vmin solid #ff3737;
-  font-size: 8vmin;
+  font-size: 6vmin;
   margin-right: 3vmin;
   width: 12vmin;
+  color: #777777;
+  pointer-events: none;
 }
 
-.container .operators-settings .buttons #reset:hover {
-  background: rgba(255, 55, 55, 0.6);
+#reset:hover {
+  -webkit-box-shadow: 0 0 1.5vmin #ff3737;
+          box-shadow: 0 0 1.5vmin #ff3737;
 }
 
-.container .operators-settings .buttons #next {
-  border: 0.5vmin solid #16ff01;
+#next {
+  border: 0.5vmin solid #d400ff;
   width: 12vmin;
+  color: #777777;
+  pointer-events: none;
 }
 
-.container .operators-settings .buttons #next:hover {
-  background: rgba(80, 255, 80, 0.6);
+#next:hover {
+  -webkit-box-shadow: 0 0 1.5vmin #d400ff !important;
+          box-shadow: 0 0 1.5vmin #d400ff !important;
 }
 
-.container .questions-settings {
+.questions-settings {
   height: 50vmin;
   display: none;
 }
 
-.container .questions-settings .text {
+.questions-settings .text-with-input {
   margin-top: 9vmin;
 }
 
-.container .questions-settings #questions::after {
-  content: '30';
-  left: 102%;
-}
-
-.container .questions-settings #questions::before {
-  content: '5';
-  right: 102%;
-}
-
-.container .questions-settings .slider {
+.questions-settings .slider {
   margin-top: 6vmin;
 }
 
-.container .questions-settings .buttons {
+.questions-settings .buttons {
   margin-top: 6vmin;
   width: auto;
   -webkit-box-orient: horizontal;
@@ -441,21 +351,40 @@ body {
           justify-content: flex-start;
 }
 
-.container .questions-settings .buttons #return {
-  border: 0.5vmin solid #777777;
+#max-range::after {
+  content: '100';
+}
+
+#max-range::before {
+  content: '10';
+}
+
+#questions-range::after {
+  content: '30';
+}
+
+#questions-range::before {
+  content: '5';
+}
+
+#return {
+  border: 0.5vmin solid #d400ff;
   margin-right: 3vmin;
   width: 12vmin;
 }
 
-.container .questions-settings .buttons #return:hover {
-  background: #7777779f;
+#return:hover {
+  -webkit-box-shadow: 0 0 1.5vmin #d400ff;
+          box-shadow: 0 0 1.5vmin #d400ff;
 }
 
-.container .questions-settings .buttons #start {
-  border: 0.5vmin solid #16ff01;
+#start {
+  border: 0.5vmin solid #50ff50;
   width: 24vmin;
 }
 
-.container .questions-settings .buttons #start:hover {
-  background: rgba(80, 255, 80, 0.6);
+#start:hover {
+  -webkit-box-shadow: 0 0 1.5vmin #50ff50;
+          box-shadow: 0 0 1.5vmin #50ff50;
 }
+/*# sourceMappingURL=settings.css.map */

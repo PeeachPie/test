@@ -1,21 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-html, body {
+body {
   margin: 0;
   min-height: 100vh;
   font-size: 4.5vmin;
   font-family: 'Roboto', sans-serif;
   color: #ebebeb;
-}
-
-body {
   background: #1f1f1f;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
+}
+
+button, input {
+  font: inherit;
+  background-color: inherit;
+  color: inherit;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+a:link {
+  color: #ebebeb;
+}
+
+a:visited {
+  color: #ebebeb;
 }
 
 .container {
@@ -24,79 +40,72 @@ body {
   margin: auto;
 }
 
-.container .result {
+.result {
   padding: 3vmin;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 0.5vmin solid #4a4a4a;
   border-radius: 6vmin;
-  -moz-border-radius: 6vmin;
-  -webkit-border-radius: 6vmin;
 }
 
-.container .result .rightAns {
+.total {
   margin-bottom: 3vmin;
 }
 
-.container .result .answers {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.answers {
+  padding: 3vmin;
 }
 
-.container .result .answers .right {
+.answers .right {
   margin-bottom: 0.5vmin;
   border-left: 0.5vmin solid #50ff50;
   color: #50ff50;
 }
 
-.container .result .answers .wrong {
+.answers .wrong {
   margin-bottom: 0.5vmin;
   border-right: 0.5vmin solid #ff3737;
   color: #ff3737;
 }
 
-.container .result .buttons > * {
+.buttons > * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-size: 4.5vmin;
+      -ms-flex-align: center;
+          align-items: center;
   height: 9vmin;
   margin: auto;
   margin-top: 3vmin;
   border-radius: 6vmin;
-  -moz-border-radius: 6vmin;
-  -webkit-border-radius: 6vmin;
 }
 
-.container .result .buttons .correct {
-  width: 55vmin;
+.correct {
+  width: 45vmin;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 0.5vmin solid #ff3737;
 }
 
-.container .result .buttons .correct:hover {
-  background: rgba(255, 55, 55, 0.6);
+.correct:hover {
+  -webkit-box-shadow: 0 0 1.5vmin #ff3737;
+          box-shadow: 0 0 1.5vmin #ff3737;
 }
 
-.container .result .buttons .home {
+.home {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 0.5vmin solid #16ff01;
+  border: 0.5vmin solid #50ff50;
   width: 30vmin;
 }
 
-.container .result .buttons .home:hover {
-  background: rgba(80, 255, 80, 0.6);
+.home:hover {
+  -webkit-box-shadow: 0 0 1.5vmin #50ff50;
+          box-shadow: 0 0 1.5vmin #50ff50;
 }
+/*# sourceMappingURL=result.css.map */
