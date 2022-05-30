@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../styles/settings.css" rel="stylesheet" type="text/css" />
+  <link href="../styles/settings/settings.css" rel="stylesheet" type="text/css" />
   <title>Устный счет</title>
 </head>
 
@@ -14,61 +14,64 @@
       <div class="operators">
         <div class="text">Арифметические действия</div>
         <div class="choose">
-          <div class="selected" id="plus">+</div>
-          <div class="unselected" id="minus">-</div>
-          <div class="unselected" id="multiply">×</div>
-          <div class="unselected" id="division">÷</div>
+          <button style="--i: 1" type="button" class="unselected" id="plus">+</button>
+          <button style="--i: 2" type="button" class="unselected" id="minus">-</button>
+          <button style="--i: 3" type="button" class="unselected" id="multiply">×</button>
+          <button style="--i: 4" type="button" class="unselected" id="division">÷</button>
         </div>
       </div>
-      
+
+      <div class="info">Чтобы продолжить выберите арифметические действия</div>
+
       <div class="numbers">
         <div class="text">Делители и множители</div>
         <div class="choose">
-          <div class="selected" id="num1">1</div>
-          <div class="unselected" id="num2">2</div>
-          <div class="unselected" id="num3">3</div>
-          <div class="unselected" id="num4">4</div>
-          <div class="unselected" id="num5">5</div>
-          <div class="unselected" id="num6">6</div>
-          <div class="unselected" id="num7">7</div>
-          <div class="unselected" id="num8">8</div>
-          <div class="unselected" id="num9">9</div>
-          <div class="unselected" id="num10">10</div>
+          <button style="--i: 1" type="button" class="unselected" id="num1">1</button>
+          <button style="--i: 2" type="button" class="unselected" id="num2">2</button>
+          <button style="--i: 3" type="button" class="unselected" id="num3">3</button>
+          <button style="--i: 4" type="button" class="unselected" id="num4">4</button>
+          <button style="--i: 5" type="button" class="unselected" id="num5">5</button>
+          <button style="--i: 6" type="button" class="unselected" id="num6">6</button>
+          <button style="--i: 7" type="button" class="unselected" id="num7">7</button>
+          <button style="--i: 8" type="button" class="unselected" id="num8">8</button>
+          <button style="--i: 9" type="button" class="unselected" id="num9">9</button>
+          <button style="--i: 10" type="button" class="unselected" id="num10">10</button>
         </div>
       </div>
-      
+
       <div class="max">
-        <div class="text">
-          <div class="a">Сложение и вычитание до&nbsp;</div>
-          <input type="number" class="value" id="m" value="10" step="10" min="10" max="100"></input>
+        <div class="text-with-input">
+          <div class="text">Сложение и вычитание до&nbsp;</div>
+          <input type="number" class="value" id="max-number" value="10" step="10" min="10" max="100"></input>
         </div>
+
         <div class="slider">
-          <input type="range" class="range" id="max" value="10" step="10" min="10" max="100">
+          <input type="range" class="range" id="max-range" value="10" step="10" min="10" max="100">
         </div>
-  
+
       </div>
       <div class="buttons">
-        <div class="button" id="reset">×</div>
-        <div class="button" id="next">❯</div>
+        <button type="button" id="reset">⭮</button>
+        <button type="button" id="next">❯</button>
       </div>
     </div>
-    
+
     <div class="questions-settings">
       <div class="questions">
-        <div class="text">
-          <div class="b">Количество заданий:&nbsp;</div>
-          <input type="number" class="value" id="q" value="5" step="5" min="5" max="30"></input>
+        <div class="text-with-input">
+          <div class="text">Количество заданий:&nbsp;</div>
+          <input type="number" class="value" id="questions-number" value="5" step="5" min="5" max="30"></input>
         </div>
         <div class="slider">
-          <input type="range" class="range" id="questions" value="5" step="5" min="5" max="30">
+          <input type="range" class="range" id="questions-range" value="5" step="5" min="5" max="30">
         </div>
       </div>
-        <div class="buttons">
-          <div class="button" id="return">❮</div>
-          <div class="button" id="start">Начать</div>
-        </div>
+      <div class="buttons">
+        <button type="button" id="return">❮</button>
+        <a class="button" id="start" href="../pages/test.html">Начать</a>
+      </div>
     </div>
-    
+
   </div>
   <script type="module" src="../scripts/settings.js"></script>
 </body>
