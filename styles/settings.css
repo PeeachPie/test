@@ -28,7 +28,7 @@ button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-    padding: 0;
+  padding: 0;
 }
 
 button, input {
@@ -67,6 +67,8 @@ a:visited {
 }
 
 .operators-settings, .questions-settings {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border: 0.5vmin solid #4a4a4a;
   border-radius: 6vmin;
   width: 100%;
@@ -119,6 +121,9 @@ a:visited {
 
 .operators-settings {
   padding: 3vmin;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
 }
 
 .operators-settings > * {
@@ -315,13 +320,21 @@ a:visited {
   font-size: 6vmin;
   margin-right: 3vmin;
   width: 12vmin;
-  color: #777777;
   pointer-events: none;
 }
 
 #reset:hover {
   -webkit-box-shadow: 0 0 1.5vmin #ff3737;
           box-shadow: 0 0 1.5vmin #ff3737;
+}
+
+#reset-svg {
+  width: 7vmin;
+  height: 7vmin;
+}
+
+#reset-svg-path {
+  fill: #777777;
 }
 
 #next {
@@ -397,4 +410,3 @@ a:visited {
   -webkit-box-shadow: 0 0 1.5vmin #50ff50;
           box-shadow: 0 0 1.5vmin #50ff50;
 }
-/*# sourceMappingURL=settings.css.map */
