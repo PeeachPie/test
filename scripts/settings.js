@@ -19,28 +19,12 @@ const $maxBlock = document.querySelector(".max");
 
 const $next = document.querySelector("#next");
 const $reset = document.querySelector("#reset");
+const $resetPath = document.querySelector("#reset-svg-path")
 const $return = document.querySelector("#return");
 const $start = document.querySelector("#start");
 
 const $maxRange = document.querySelector("#max-range");
 const $maxNumber = document.querySelector("#max-number");
-
-// const max = {
-//   block : document.querySelector(".max"),
-//   inputNumber : document.querySelector("#max-number"),
-//   inputRange : document.querySelector("#max"), 
-// }
-
-// const numbers = {
-//   block : document.querySelector(".numbers"),
-//   buttons : document.querySelectorAll(".numbers .choose > *"),
-// }
-
-// const questions = {
-//   block : document.querySelector(".max"),
-//   inputNumber : document.querySelector("#q"),
-//   inputRange : document.querySelector("#questions"), 
-// }
 
 let Tasks = new Task()
 
@@ -107,7 +91,8 @@ function resetSettings() {
   changeFill(0, $questionsRange);
 
   unableButton($next)
-  unableButton($reset)
+  $reset.style.pointerEvents = "none"
+  $resetPath.style.fill = '#777777';
 
   showElement($info)
 }
@@ -171,8 +156,9 @@ window.addEventListener("click", () => {
     : hideElement($numbersBlock);
 
   if (Tasks.operators.length > 0) {
-    ableButton($reset);
-    hideElement($info)
+    $reset.style.pointerEvents = "auto";
+    $resetPath.style.fill = '#ebebeb';
+    hideElement($info);
   }
 
   if ((Tasks.operators.includes("*") || Tasks.operators.includes("/"))) {
