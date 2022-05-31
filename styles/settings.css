@@ -262,6 +262,7 @@ a:visited {
   border-radius: 1.5vmin;
   border: 0.5vmin solid #4a4a4a;
   height: 3vmin;
+  background-color: inherit;
 }
 
 .slider .range::-webkit-slider-thumb {
